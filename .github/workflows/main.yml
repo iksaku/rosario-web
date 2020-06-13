@@ -54,3 +54,4 @@ jobs:
           user_name: 'cj[bot]'
           user_email: 'cj[bot]@users.noreply.github.com'
           commit_message: ${{ github.event.head_commit.message }}
+          cname: rosario.jorgeglz.io
