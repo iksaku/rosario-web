@@ -11,10 +11,10 @@
 
     <p>
       <strong>Todos:</strong> Señor mío Jesucristo, Dios y Hombre verdadero,
-      creador y redentor mío, por por ser tú quien eres y porque te amo sobre
-      todas las cosas, me pesa de todo corazón haberte ofendido; propongo
-      firmemente enmendarme, confesarme y cumplir la penitencia que me fuere
-      impuesta, ofrezco cuanto hiciere en satisfacción de mis pecados.
+      creador y redentor mío, por ser tú quien eres y porque te amo sobre todas
+      las cosas, me pesa de todo corazón haberte ofendido; propongo firmemente
+      enmendarme, confesarme y cumplir la penitencia que me fuere impuesta,
+      ofrezco cuanto hiciere en satisfacción de mis pecados.
       <br />
       Confío en tu bondad y misericordia infinita que me perdonarás por tu
       preciosa sangre, y me darás la gracia para nunca más pecar.
