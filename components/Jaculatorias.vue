@@ -1,0 +1,71 @@
+<template>
+  <div>
+    <p>
+      <strong>Guía:</strong> Oh Soberano Santuario, Sagrario del Verbo Eterno...
+      <br />
+      <strong>Todos:</strong> Libra, Virgen, del infierno a los que rezan tu
+      Rosario.
+    </p>
+    <p>
+      <strong>Guía:</strong> Emperatriz poderosa de los mortales consuelo...
+      <br />
+      <strong>Todos:</strong> Ábrenos, Virgen el cielo con una muerte dichosa.
+    </p>
+    <p>
+      <strong>Guía:</strong> Padre nuestro, que estas en cielo, santificado sea
+      tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como
+      en el cielo...
+      <br />
+      <strong>Todos:</strong> Danos hoy nuestro pan de cada día, perdona
+      nuestras ofensas, como también nosotros perdonamos a los que nos ofenden,
+      no nos dejes caer en la tentación y líbranos del mal.
+    </p>
+    <p>
+      <strong>Guía:</strong> Dios te salve, María Santísima, hija de Dios Padre,
+      Virgen Purísima y castísima antes del parto, en tus manos encomiendo toda
+      mi fe para que la alumbres, llena eres de gracia, el Señor está contigo,
+      bendita eres entre las mujeres y bendito es el fruto de tu vientre,
+      Jesús...
+      <br />
+      <strong>Todos:</strong> Santa María Madre de Dios, ruega por nosotros los
+      pecadores, ahora y en la hora de nuestra muerte. Amén.
+    </p>
+    <p>
+      <strong>Guía:</strong> Dios te salve, María Santísima, madre de Dios Hijo,
+      Virgen Purísima y castísima en el parto en tus manos encomiendo mi
+      esperanza para que la alientes, llena eres de gracia, el Señor está
+      contigo, bendita eres entre las mujeres y bendito es el fruto de tu
+      vientre, Jesús...
+      <br />
+      <strong>Todos:</strong> Santa María Madre de Dios, ruega por nosotros los
+      pecadores, ahora y en la hora de nuestra muerte. Amén.
+    </p>
+    <p>
+      <strong>Guía:</strong> Dios te salve, María Santísima, esposa de Dios
+      Espíritu Santo Virgen Purísima y castísima después del parto, en tus manos
+      encomiendo mi caridad para que la infames, llena eres de gracia, el Señor
+      está contigo, bendita eres entre las mujeres y bendito es el fruto de tu
+      vientre, Jesús...
+      <br />
+      <strong>Todos:</strong> Santa María Madre de Dios, ruega por nosotros los
+      pecadores, ahora y en la hora de nuestra muerte. Amén.
+    </p>
+    <p>
+      <strong>Guía:</strong> Dios te salve, María Santísima, templo, trono y
+      sagrario de la Santísima Trinidad, Virgen concebida sin culpa original,
+      Dios te salve...
+      <br />
+      <strong>Todos:</strong> Reina y Madre de misericordia, vida, dulzura y
+      esperanza nuestra: Dios te salve; a ti llamamos los desterrados hijos de
+      Eva; a ti suspiramos gimiendo y llorando en este valle de lágrimas. ¡Ea!,
+      Pues, Señora, abogada nuestra, vuelve a nosotros esos tus ojos
+      misericordioso y después, de este destierro muéstranos a Jesús fruto
+      bendito de tu vientre, ¡Oh piadosa! ¡Oh dulce Virgen María!.
+    </p>
+    <p>
+      <strong>Guía:</strong> Ruega por nosotros, Santa, Madre de Dios, para que
+      seamos dignos de alcanzar las promesas divinas de nuestro señor
+      Jesucristo, Amén
+    </p>
+  </div>
+</template>
