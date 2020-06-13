@@ -31,7 +31,7 @@ jobs:
       - name: Persist Build
         uses: actions/upload-artifact@v1
         with:
-          name: build
+          name: dist
           path: dist
 
   deploy:
@@ -43,7 +43,7 @@ jobs:
       - name: Restore Build
         uses: actions/download-artifact@v1
         with:
-          name: build
+          name: dist
 
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
