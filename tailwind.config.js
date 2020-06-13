@@ -22,6 +22,12 @@ module.exports = {
     borderColor: [...config.variants.borderColor, 'hocus'],
     boxShadow: [...config.variants.boxShadow, 'hocus']
   },
+  purge: {
+    content: ['components/**/*.vue', 'layouts/**/*.vue', 'pages/**/*.vue'],
+    options: {
+      whitelistPatternsChildren: [/markdown$/]
+    }
+  },
   plugins: [
     require('@iksaku/tailwindcss-plugins/plugins/variants/hocusVariant'),
     require('@iksaku/tailwindcss-plugins/plugins/components/markdown'),
