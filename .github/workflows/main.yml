@@ -31,7 +31,7 @@ jobs:
       - name: Persist Build
         uses: actions/upload-artifact@v1
         with:
-          name: dist
+          name: build
           path: dist
 
   deploy:
@@ -43,13 +43,13 @@ jobs:
       - name: Restore Build
         uses: actions/download-artifact@v1
         with:
-          name: dist
+          name: build
 
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./build
           publish_branch: gh-pages
           user_name: 'cj[bot]'
           user_email: 'cj[bot]@users.noreply.github.com'
