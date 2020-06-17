@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="min-h-screen w-full flex bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-  >
+  <div class="min-h-screen w-full flex">
     <div
       v-if="$store.state.sidebar.open"
       class="lg:hidden fixed z-40 inset-0 bg-black opacity-50"
@@ -35,6 +33,14 @@
       FooterComponent,
       HeaderComponent
       // Sidebar
+    },
+
+    head() {
+      return {
+        bodyAttrs: {
+          class: 'bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100'
+        }
+      }
     },
 
     middleware: ['sidebar']
