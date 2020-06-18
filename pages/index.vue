@@ -99,9 +99,9 @@
     </p>
     <p>
       <strong>Guía:</strong> Bajo tu amparo nos acogemos, Santa Madre de Dios,
-      no desperdicies las súplicas que te dirigimos en nuestras necesidades,
-      antes bien, líbranos de todos los peligros, oh Virgen gloriosa y bendita.
-      Ruega por nosotros, Santa Madre de Dios.
+      no desprecies las súplicas que te dirigimos en nuestras necesidades, antes
+      bien, líbranos de todos los peligros, oh Virgen gloriosa y bendita. Ruega
+      por nosotros, Santa Madre de Dios...
       <br />
       <strong>Todos:</strong> Para que seamos dignos de alcanzar las promesas de
       Nuestro Señor Jesucristo. Amén.
