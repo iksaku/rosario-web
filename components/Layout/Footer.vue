@@ -2,7 +2,11 @@
   <footer
     class="container flex items-center justify-center text-xl md:text-2xl p-4 sm:px-6 mx-auto space-x-2"
   >
-    <a class="inline-block align-middle" href="https://twitter.com/iksaku2">
+    <a
+      class="inline-block align-middle"
+      href="https://twitter.com/iksaku2"
+      aria-label="Ir al Twitter de Jorge González"
+    >
       <fa :icon="['fab', 'twitter']" />
     </a>
 

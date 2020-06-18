@@ -17,6 +17,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://rsms.me' },
+      { rel: 'dns-prefetch', href: 'https://rsms.me' },
       { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' }
     ]
   },
@@ -60,7 +62,7 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faBars', 'faTimes'],
+      // solid: ['faBars', 'faTimes'],
       brands: ['faTwitter']
     }
   }

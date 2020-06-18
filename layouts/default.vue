@@ -1,15 +1,15 @@
 <template>
   <div class="min-h-screen w-full flex">
-    <div
+    <!--<div
       v-if="$store.state.sidebar.open"
       class="lg:hidden fixed z-40 inset-0 bg-black opacity-50"
       @click="$store.commit('sidebar/toggle', false)"
       @keydown.esc="$store.commit('sidebar/toggle', false)"
     >
-      <!-- Blur main window when Sidebar is Open in mobile -->
+      &lt;!&ndash; Blur main window when Sidebar is Open in mobile &ndash;&gt;
     </div>
 
-    <!--<sidebar />-->
+    <sidebar />-->
 
     <div class="min-w-0 flex-1 w-full flex flex-col">
       <header-component />

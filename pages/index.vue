@@ -23,26 +23,25 @@
     </p>
 
     <h2>Lectura de los Misterios</h2>
-    <label class="min-w-0">
-      <select
-        v-model="misterios"
-        class="w-full form-select truncate bg-gray-100 dark:bg-gray-900"
-      >
-        <option disabled value="">Selecciona los Misterios por Leer</option>
-        <option value="gozosos">
-          Misterios Gozosos (Lunes y Sábado)
-        </option>
-        <option value="luminosos">
-          Misterios Luminosos (Jueves)
-        </option>
-        <option value="dolorosos">
-          Misterios Dolorosos (Martes y Viernes)
-        </option>
-        <option value="gloriosos">
-          Misterios Gloriosos (Miércoles y Domingo)
-        </option>
-      </select>
-    </label>
+    <select
+      v-model="misterios"
+      class="w-full sm:w-auto form-select truncate bg-gray-100 dark:bg-gray-900"
+      aria-label="Selecciona los Misterios por Leer"
+    >
+      <option disabled value="">Selecciona los Misterios por Leer</option>
+      <option value="gozosos">
+        Misterios Gozosos (Lunes y Sábado)
+      </option>
+      <option value="luminosos">
+        Misterios Luminosos (Jueves)
+      </option>
+      <option value="dolorosos">
+        Misterios Dolorosos (Martes y Viernes)
+      </option>
+      <option value="gloriosos">
+        Misterios Gloriosos (Miércoles y Domingo)
+      </option>
+    </select>
     <component :is="misterios" />
 
     <h2>Oración por las intenciones del Santo Padre</h2>
