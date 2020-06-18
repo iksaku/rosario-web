@@ -875,9 +875,9 @@
     purgecss "^2.2.0"
 
 "@iksaku/tailwindcss-plugins@^1.1.4":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@iksaku/tailwindcss-plugins/-/tailwindcss-plugins-1.2.3.tgz#263251dba1c4d9f8e815a0afd1915337c9106e71"
-  integrity sha512-G+y+7RmJunCX5ajpqQowWRq1nvWj64R8JOPwqcGhYcCw06DICy33wXZgI/qthDUjby0R7HI4C/ECxzFZudXgbQ==
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@iksaku/tailwindcss-plugins/-/tailwindcss-plugins-1.2.4.tgz#897d6258618774420e4a28e263f1594427e87dae"
+  integrity sha512-KvkTVSBolTiulUUv72/PKVkyTLtXRfjMvS9Ak9pmwAxDR8l8jwtzQRETxCTfN+J/8U6/1bspfA1/XPCb8AR0YQ==
   dependencies:
     lodash "^4.17.15"
 
@@ -6033,9 +6033,9 @@ lines-and-columns@^1.1.6:
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
 lint-staged@^10.0.0:
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.10.tgz#f0f78bf8786bbe90e1775a0dc540f7f12b6a79b2"
-  integrity sha512-dgelFaNH6puUGAcU+OVMgbfpKSerNYsPSn6+nlbRDjovL0KigpsVpCu0PFZG6BJxX8gnHJqaZlR9krZamQsb0w==
+  version "10.2.11"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.11.tgz#713c80877f2dc8b609b05bc59020234e766c9720"
+  integrity sha512-LRRrSogzbixYaZItE2APaS4l2eJMjjf5MbclRZpLJtcQJShcvUzKXsNeZgsLIZ0H0+fg2tL4B59fU9wHIHtFIA==
   dependencies:
     chalk "^4.0.0"
     cli-truncate "2.1.0"
@@ -6054,9 +6054,9 @@ lint-staged@^10.0.0:
     stringify-object "^3.3.0"
 
 listr2@^2.1.0:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.1.3.tgz#f527e197de12ad8c488c566921fa2da34cbc67f6"
-  integrity sha512-6oy3QhrZAlJGrG8oPcRp1hix1zUpb5AvyvZ5je979HCyf48tIj3Hn1TG5+rfyhz30t7HfySH/OIaVbwrI2kruA==
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.1.8.tgz#8af7ebc70cdbe866ddbb6c80909142bd45758f1f"
+  integrity sha512-Op+hheiChfAphkJ5qUxZtHgyjlX9iNnAeFS/S134xw7mVSg0YVrQo1IY4/K+ElY6XgOPg2Ij4z07urUXR+YEew==
   dependencies:
     chalk "^4.0.0"
     cli-truncate "^2.1.0"
