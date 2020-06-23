@@ -43,7 +43,7 @@
     <p>
       <strong>Guía:</strong> Dios te salve, María Santísima, esposa de Dios
       Espíritu Santo Virgen Purísima y castísima después del parto, en tus manos
-      encomiendo mi caridad para que la infames, llena eres de gracia, el Señor
+      encomiendo mi caridad para que la inflames, llena eres de gracia, el Señor
       está contigo, bendita eres entre las mujeres y bendito es el fruto de tu
       vientre, Jesús...
       <br />
