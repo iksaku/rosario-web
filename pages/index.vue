@@ -106,8 +106,8 @@
       Nuestro Señor Jesucristo. Amén.
     </p>
     <p>
-      <strong>Guía:</strong> Oh Dios, cuyo Unigénito Hijo, con su muerte, vida,
-      muerte y resurrección, nos alcanzó el premio de la vida eterna:
+      <strong>Guía:</strong> Oh Dios, cuyo Unigénito Hijo, con su vida, muerte
+      y resurrección, nos alcanzó el premio de la vida eterna:
       concédenos, a los que recordamos estos misterios del Santo Rosario, imitar
       lo que contienen y alcanzar lo que prometen. Por el mismo Jesucristo,
       nuestro Señor.
