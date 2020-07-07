@@ -9,9 +9,6 @@ const config = require('tailwindcss/defaultConfig')
 module.exports = {
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter var', ...config.theme.fontFamily.sans]
-      },
       screens: {
         dark: { raw: '(prefers-color-scheme: dark)' }
       }
@@ -29,8 +26,9 @@ module.exports = {
     }
   },
   plugins: [
-    require('@iksaku/tailwindcss-plugins/plugins/variants/hocusVariant'),
-    require('@iksaku/tailwindcss-plugins/plugins/components/markdown'),
-    require('@tailwindcss/custom-forms')
+    require('@tailwindcss/custom-forms'),
+    require('@iksaku/tailwindcss-plugins/src/hocus'),
+    require('@iksaku/tailwindcss-plugins/src/interFontFamily'),
+    require('@iksaku/tailwindcss-plugins/src/markdown')
   ]
 }

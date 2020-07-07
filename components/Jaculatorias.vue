@@ -59,7 +59,7 @@
       esperanza nuestra: Dios te salve; a ti llamamos los desterrados hijos de
       Eva; a ti suspiramos gimiendo y llorando en este valle de lágrimas. ¡Ea!,
       Pues, Señora, abogada nuestra, vuelve a nosotros esos tus ojos
-      misericordioso y después, de este destierro muéstranos a Jesús fruto
+      misericordiosos y después, de este destierro muéstranos a Jesús fruto
       bendito de tu vientre, ¡Oh piadosa! ¡Oh dulce Virgen María!.
     </p>
     <p>
