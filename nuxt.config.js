@@ -1,4 +1,13 @@
 export default {
+  /*
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
+  mode: 'universal',
+  /*
+   ** Nuxt target
+   ** See https://nuxtjs.org/api/configuration-target
+   */
   target: 'static',
   /*
    ** Headers of the page
@@ -26,10 +35,6 @@ export default {
     ]
   },
   /*
-   ** Customize the progress-bar color
-   */
-  loading: false,
-  /*
    ** Global CSS
    */
   css: [],
@@ -37,6 +42,11 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [],
+  /*
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
+  components: true,
   /*
    ** Nuxt.js dev-modules
    */
@@ -55,13 +65,11 @@ export default {
   /*
    ** Build configuration
    */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  },
-
+  build: {},
+  /*
+   ** Import Font Awesome Icons
+   ** See https://github.com/nuxt-community/fontawesome-module
+   */
   fontawesome: {
     component: 'fa',
     icons: {
