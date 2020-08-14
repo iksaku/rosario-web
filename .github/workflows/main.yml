@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Detect Yarn Cache Directory
         id: cache-yarn
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Setup Yarn Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ steps.cache-yarn.outputs.dir }}
           key: cache-yarn-${{ hashFiles('yarn.lock') }}
@@ -24,37 +24,3 @@ jobs:
 
       - name: Lint Project
         run: yarn lint
-
-      - name: Build Project
-        run: yarn build
-
-      - name: Export Project as Static Site
-        run: yarn export
-
-      - name: Persist Build
-        uses: actions/upload-artifact@v1
-        with:
-          name: build
-          path: dist
-
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: tests
-    if: github.repository == 'iksaku/rosario-web' && github.ref == 'refs/heads/master'
-    steps:
-      - name: Restore Build
-        uses: actions/download-artifact@v1
-        with:
-          name: build
-
-      - name: Publish to Github Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: gh-pages
-          user_name: 'cj[bot]'
-          user_email: 'cj[bot]@users.noreply.github.com'
-          commit_message: ${{ github.event.head_commit.message }}
-          cname: rosario.jorgeglz.io
