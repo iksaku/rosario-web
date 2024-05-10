@@ -56,6 +56,7 @@ function ucfirst(str: string): string {
 
 export default function () {
   const [selected, setSelected] = createSignal(misteriosDelDia())
+  const title = createMemo(() => `Misterios ${ucfirst(selected()!)}`)
   const misteriosSeleccionados = createMemo(() => {
     if (!selected()) return undefined
 
@@ -71,7 +72,7 @@ export default function () {
         <h2>Lectura de los Misterios</h2>
         <select
             class="dark:bg-black"
-            onInput={SeleccionarMisterios}
+            onChange={SeleccionarMisterios}
         >
           <option disabled>Selecciona los Misterios por Leer</option>
           <For each={Object.entries(misteriosPorDia)}>
@@ -83,7 +84,7 @@ export default function () {
           </For>
         </select>
         <Show when={!!selected()}>
-          <h3>Misterios {ucfirst(selected()!)}</h3>
+          <h3>{title()}</h3>
           <ul>
             <For each={misteriosSeleccionados()}>
               {(entry) => (
