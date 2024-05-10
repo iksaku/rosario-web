@@ -72,12 +72,13 @@ export default function () {
         <h2>Lectura de los Misterios</h2>
         <select
             class="dark:bg-black"
+            value={selected()}
             onChange={SeleccionarMisterios}
         >
           <option disabled>Selecciona los Misterios por Leer</option>
           <For each={Object.entries(misteriosPorDia)}>
             {([value, label]) => (
-                <option value={value} selected={selected() === value}>
+                <option value={value}>
                   {label}
                 </option>
             )}
