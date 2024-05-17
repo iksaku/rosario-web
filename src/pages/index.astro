@@ -1,10 +1,11 @@
 ---
-import { now } from "../util";
 import OracionInicial from "../components/OracionInicial.astro";
 import Misterios from "../components/Misterios.tsx";
 import OracionIntencionesSantoPadre from "../components/OracionIntencionesSantoPadre.astro";
 import Jaculatorias from "../components/Jaculatorias.astro";
 import Letanias from "../components/Letanias.astro";
+
+const { cf: { timezone } } = Astro.locals.runtime
 ---
 
 <html lang="en">
@@ -19,7 +20,8 @@ import Letanias from "../components/Letanias.astro";
 		<div class="max-w-6xl px-8 mx-auto my-8">
 			<article class="prose prose-lg dark:prose-invert max-w-none">
 				<OracionInicial />
-				<Misterios client:load />
+				<!-- There's a bug (somewhere) that makes solid not work with client:load directive 🥲 -->
+				<Misterios client:only="solid-js" timezone={timezone} />
 				<OracionIntencionesSantoPadre />
 				<Jaculatorias />
 				<Letanias />
@@ -34,7 +36,7 @@ import Letanias from "../components/Letanias.astro";
 				>
 					Jorge González
 				</a>
-				2020 - {now().year}
+				2020 - {new Date().getFullYear()}
 			</footer>
 		</div>
 	</body>
