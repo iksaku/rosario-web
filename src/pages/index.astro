@@ -4,6 +4,7 @@ import Misterios from "../components/Misterios.tsx";
 import OracionIntencionesSantoPadre from "../components/OracionIntencionesSantoPadre.astro";
 import Jaculatorias from "../components/Jaculatorias.astro";
 import Letanias from "../components/Letanias.astro";
+import OracionFinal from "../components/OracionFinal.astro";
 
 const { cf: { timezone } } = Astro.locals.runtime
 ---
@@ -14,23 +15,34 @@ const { cf: { timezone } } = Astro.locals.runtime
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="generator" content={Astro.generator} />
-	<title>Astro</title>
+
+	<title>Guía del Santo Rosario</title>
+	<meta name="og:title" content="Guía del Santo Rosario" />
+
+	<meta name="description" content="Guía web para rezar del Santo Rosario en cualquier lugar." />
+	<meta name="og:description" content="Guía web para rezar del Santo Rosario en cualquier lugar." />
+
+	<meta name="og:url" content={Astro.url} />
+
+	<meta name="twitter:site" content="@iksaku2" />
+	<meta name="twitter:creator" content="@iksaku2" />
+	<meta name="twitter:card" content="summary" />
 </head>
 	<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
 		<div class="max-w-6xl px-8 mx-auto my-8">
 			<article class="prose prose-lg dark:prose-invert max-w-none">
 				<OracionInicial />
-				<!-- There's a bug (somewhere) that makes solid not work with client:load directive 🥲 -->
-				<Misterios client:only="solid-js" timezone={timezone} />
+				<Misterios client:load timezone={timezone} />
 				<OracionIntencionesSantoPadre />
 				<Jaculatorias />
 				<Letanias />
+				<OracionFinal />
 			</article>
 
 			<footer class="w-full my-8 text-center text-base font-medium">
 				&copy;
 				<a
-					href="https://twitter.com/iksaku2"
+					href="https://jorgeglz.io"
 					target="_blank"
 					class="underline decoration-2 decoration-blue-500"
 				>
