@@ -1,0 +1,17 @@
+{
+  "name": "Guía del Santo Rosario",
+  "short_name": "Rosario",
+  "description": "Guía para rezar el Santo Rosario de la Virgen de Guadalupe",
+  "lang": "es",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#faf6ee",
+  "background_color": "#faf6ee",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
