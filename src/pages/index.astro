@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import OracionInicial from "../components/OracionInicial.astro";
 import Misterios from "../components/Misterios.tsx";
+import InstallHint from "../components/InstallHint.tsx";
 import OracionIntencionesSantoPadre from "../components/OracionIntencionesSantoPadre.astro";
 import Jaculatorias from "../components/Jaculatorias.astro";
 import Letanias from "../components/Letanias.astro";
@@ -15,6 +16,10 @@ import OracionFinal from "../components/OracionFinal.astro";
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Guía del Santo Rosario</title>
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#faf6ee" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
             property="og:title"
             content="Guía para rezar el Santo Rosario de la Virgen de Guadalupe"
@@ -52,6 +57,8 @@ import OracionFinal from "../components/OracionFinal.astro";
                     </p>
                 </header>
 
+                <InstallHint client:load />
+
                 <section class="mb-12">
                     <OracionInicial />
                 </section>
@@ -82,4 +89,20 @@ import OracionFinal from "../components/OracionFinal.astro";
             </div>
         </main>
     </body>
+    <script is:inline>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", async () => {
+                const reg = await navigator.serviceWorker.register("/sw.js");
+                // Home-screen sessions can live for days without navigating.
+                setInterval(() => reg.update(), 60 * 60 * 1000);
+            });
+            // skipWaiting lets the new SW take over mid-session; reload once.
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener("controllerchange", () => {
+                if (refreshing) return;
+                refreshing = true;
+                location.reload();
+            });
+        }
+    </script>
 </html>

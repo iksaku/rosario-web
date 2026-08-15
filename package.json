@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "prepreview": "astro build",
+    "build": "astro build && node scripts/build-sw.mjs",
+    "prepreview": "pnpm build",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro"
@@ -21,5 +21,8 @@
     "solid-js": "^1.9.14",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "workbox-build": "^7.4.1"
   }
 }
