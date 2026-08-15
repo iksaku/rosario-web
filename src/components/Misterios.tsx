@@ -65,8 +65,14 @@ const todaysKey = (): MisteriosValidos | undefined =>
 
 export default function () {
     const [openKey, setOpenKey] = createSignal<MisteriosValidos | undefined>()
+    const [todayKey, setTodayKey] = createSignal<MisteriosValidos | undefined>()
 
-    onMount(() => setOpenKey(todaysKey()))
+    onMount(() => {
+        // Client-side only: SSR weekday (UTC) can differ from the visitor's.
+        const today = todaysKey()
+        setTodayKey(today)
+        setOpenKey(today)
+    })
 
     return (
         <>
@@ -76,18 +82,19 @@ export default function () {
             </p>
             <For each={Object.entries(misterios) as [MisteriosValidos, MisterioSet][]}>
                 {([key, set]) => (
-                    <details
-                        open={openKey() === key}
-                        class={`group relative mb-4 rounded-xl border-2 ${openKey() === key
-                                ? "border-amber-500/70 bg-amber-50/60 dark:bg-amber-950/20"
-                                : "border-stone-200 bg-white dark:border-stone-700 dark:bg-stone-900"
-                            }`}
-                    >
-                        <Show when={key === todaysKey()}>
-                            <span class="absolute -top-2 right-4 rounded-full bg-amber-500 px-3 py-0.5 text-xs font-bold uppercase tracking-wide text-stone-900 shadow">
+                    <div class="relative mb-4">
+                        <Show when={key === todayKey()}>
+                            <span class="absolute -top-2 right-4 z-10 rounded-full bg-amber-500 px-3 py-0.5 text-xs font-bold uppercase tracking-wide text-stone-900 shadow">
                                 Hoy
                             </span>
                         </Show>
+                        <details
+                            open={openKey() === key}
+                            class={`group rounded-xl border-2 ${key === todayKey()
+                                    ? "border-amber-500/70 bg-amber-50/60 dark:bg-amber-950/20"
+                                    : "border-stone-200 bg-white dark:border-stone-700 dark:bg-stone-900"
+                                }`}
+                        >
                         <summary
                             class="flex min-h-[64px] cursor-pointer list-none items-center justify-between px-5 py-4 text-xl font-semibold text-stone-800 dark:text-stone-100"
                             onClick={(e) => {
@@ -112,7 +119,8 @@ export default function () {
                             <strong>Nota:</strong> en cada misterio se reza un Padre
                             Nuestro y diez Ave Marías.
                         </p>
-                    </details>
+                        </details>
+                    </div>
                 )}
             </For>
         </>
