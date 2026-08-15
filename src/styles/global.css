@@ -1,9 +1,30 @@
 @import "tailwindcss";
 
-@plugin "@tailwindcss/forms";
-@plugin "@tailwindcss/typography";
+.section-title {
+  @apply mb-6 border-b-2 border-teal-700/40 pb-2 font-serif text-2xl font-bold text-stone-900 sm:text-3xl dark:border-teal-400/40 dark:text-white;
+}
 
-/* Migrated from tailwind.config.mjs: tighten heading spacing inside prose */
-.prose :is(h1, h2, h3, h4, h5, h6) {
-  margin-bottom: 1rem !important;
+.line-guia {
+  @apply text-[1.35rem] leading-[1.9] font-semibold text-stone-800 sm:text-2xl dark:text-stone-100;
+}
+.line-guia > strong {
+  @apply text-teal-800 dark:text-teal-300;
+}
+
+.line-todos {
+  @apply pl-6 text-[1.35rem] leading-[1.9] text-stone-600 sm:pl-8 sm:text-2xl dark:text-stone-300;
+}
+.line-todos > strong {
+  @apply text-rose-800 dark:text-rose-300;
+}
+
+.line-plain {
+  @apply text-[1.35rem] leading-[1.9] text-stone-700 sm:text-2xl dark:text-stone-200;
+}
+
+.litany-item {
+  @apply border-l-4 border-rose-300 pl-4 text-[1.2rem] leading-relaxed text-stone-800 dark:border-rose-700 dark:text-stone-100;
+}
+.litany-item > strong {
+  @apply block font-semibold text-teal-800 dark:text-teal-300;
 }
