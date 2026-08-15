@@ -1,4 +1,10 @@
-import {createSignal, For, Show} from "solid-js";
+import {createSignal, createMemo, For, onMount, Show} from "solid-js";
+
+interface MisterioSet {
+  label: string
+  days: readonly string[]
+  items: readonly string[]
+}
 
 const misterios = {
   'gozosos': {
@@ -45,48 +51,63 @@ const misterios = {
       'La coronación y glorificación de María.',
     ]
   },
-} as const
+} as Record<string, MisterioSet>
 
 type MisteriosValidos = keyof typeof misterios
 
-function misteriosDelDia(timezone: string): MisteriosValidos | undefined {
-  const day = new Date().toLocaleString('en-US', {
-    timeZone: timezone,
-    weekday: 'long'
-  });
+function useMisterios() {
+  const [selected, setSelected] = createSignal<MisteriosValidos | undefined>()
 
-  // @ts-ignore
-  return Object.keys(misterios).find((key) => misterios[key].days.includes(day))
-      || undefined
-}
+  const selectedMisterio = createMemo(() => {
+    if (!selected() || !(selected()! in misterios)) return undefined
 
-function ucfirst(str: string): string {
-  return str[0].toUpperCase() + str.slice(1)
-}
+    return misterios[selected()!]
+  })
 
-export default function (props: { timezone: string }) {
-  const [selected, setSelected] = createSignal<MisteriosValidos | undefined>(misteriosDelDia(props.timezone))
+  function selectByLabel(key: MisteriosValidos) {
+    setSelected(key in misterios ? key : undefined)
+  }
 
-  function onSelect(selected: string) {
+  function selectByDay(day: string) {
     setSelected(
-        selected in misterios
-            ? selected as MisteriosValidos
-            : undefined
+        Object.keys(misterios)
+            .find((key) => misterios[key].days.includes(day))
     )
   }
+
+  function selectToday() {
+    selectByDay(
+        new Date().toLocaleString('en-US', {
+          weekday: 'long'
+        })
+    )
+  }
+
+  return {
+    selectedKey: selected,
+    selected: selectedMisterio,
+    selectByLabel,
+    selectToday
+  }
+}
+
+export default function () {
+  const { selected, selectedKey, selectByLabel, selectToday } = useMisterios()
+
+  onMount(() => selectToday())
 
   return (
       <>
         <h2>Lectura de los Misterios</h2>
 
         <select
-            class="dark:bg-black"
-            onChange={(e) => onSelect(e.currentTarget.value)}
+            class="dark:bg-black mt-2"
+            onChange={(e) => selectByLabel(e.currentTarget.value)}
         >
-          <option disabled>Selecciona los Misterios por Leer</option>
+          <option disabled selected={!selectedKey()}>Selecciona los Misterios por Leer</option>
           <For each={Object.entries(misterios)}>
             {([value, {label}]) => (
-                <option value={value} selected={selected() === value}>
+                <option value={value} selected={selectedKey() === value}>
                   {label}
                 </option>
             )}
@@ -94,9 +115,8 @@ export default function (props: { timezone: string }) {
         </select>
 
         <Show when={selected()}>
-          <h3 class="mt-4">Misterios {ucfirst(selected()!)}</h3>
           <ul>
-            <For each={misterios[selected()!].items}>
+            <For each={selected()!.items}>
               {(misterio) => (
                   <li>{misterio}</li>
               )}

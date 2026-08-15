@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+/* Migrated from tailwind.config.mjs: tighten heading spacing inside prose */
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 1rem !important;
+}

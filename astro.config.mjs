@@ -1,15 +1,14 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import solidJs from "@astrojs/solid-js";
-import cloudflare from "@astrojs/cloudflare";
+import solidjs from '@astrojs/solid-js';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs()],
-  output: "server",
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    }
-  }),
+  integrations: [solidjs()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  server: {
+    host: true,
+  }
 });
