@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+export PNPM_HOME="${PNPM_HOME:-$HOME/.local/share/pnpm}"
+export PATH="$PNPM_HOME/bin:$PATH"
+pnpm_version="$(sed -nE 's/^[[:space:]]*"packageManager":[[:space:]]*"pnpm@([^"]+)".*/\1/p' package.json)"
+node_version="$(cat .node-version)"
+
+# Check the installed version without the project's automatic pnpm switching.
+if [[ ! -x "$PNPM_HOME/bin/pnpm" ]] || [[ "$("$PNPM_HOME/bin/pnpm" --dir "$PNPM_HOME" --version)" != "$pnpm_version" ]]; then
+    echo "Installing standalone pnpm $pnpm_version"
+    curl -fsSL https://get.pnpm.io/install.sh | PNPM_VERSION="$pnpm_version" SHELL=/bin/bash sh -
+fi
+
+# Amp and supervised services use non-interactive login shells, not .bashrc.
+if ! grep -Fqx '# rosario-web pnpm' "$HOME/.bash_profile" 2>/dev/null; then
+    cat >> "$HOME/.bash_profile" <<'PROFILE'
+
+# rosario-web pnpm
+export PNPM_HOME="${PNPM_HOME:-$HOME/.local/share/pnpm}"
+case ":$PATH:" in
+    *":$PNPM_HOME/bin:"*) ;;
+    *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+PROFILE
+fi
+
+echo "Installing Node.js $node_version through pnpm"
+time pnpm runtime set node "$node_version" --global
+
+echo 'Installing locked dependencies'
+time pnpm install --frozen-lockfile
