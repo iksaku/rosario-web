@@ -4,6 +4,8 @@ dist/
 .astro/
 # wrangler server
 .wrangler/
+# orb portals
+.amp/portals/
 
 # dependencies
 node_modules/
